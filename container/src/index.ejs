@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Root Config</title>
+  <title>Utp</title>
   <!--
     Remove this if you only support browsers that support async/await.
     This is needed by babel to share largeish helper code for compiling async/await in older
@@ -43,20 +43,21 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   
 
-  <!-- Develop -->
+  <!-- Utp Develop -->
 
   <!-- css -->
   <link rel="stylesheet" href="https://www.fumicontrolcol.com/cdn/assets/css/styles.css">
   <style>
-    #single-spa-application\:\@utp\/mf-nav {
-      height: 100%;
+    .main-content {
+      margin-left: 230px; 
+      padding:10px; 
+      
     }
   </style>
-
   <!-- js -->
   <script type="text/javascript" src="https://www.fumicontrolcol.com/cdn/assets/js/app.js"></script>
 
-  <!-- End Develop -->
+  <!-- End Utp Develop -->
 
 
   <!-- Production -->
@@ -71,7 +72,10 @@
     {
       "imports": {
         "@utp/root-config": "//localhost:9000/utp-root-config.js",
-        "@utp/mf-nav": "//localhost:4200/main.js"
+        "@utp/mf-header": "//localhost:57518/main.js",
+        "@utp/mf-sidenav": "//localhost:61923/main.js",
+        "@utp/mf-hiring": "//localhost:4200/main.js"
+        
       }
     }
   </script>
@@ -96,7 +100,13 @@
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
-  <main></main>
+
+  <header id="single-spa-application:@utp/mf-header"></header>
+  <aside id="single-spa-application:@utp/mf-sidenav"></aside>
+  <main class="main-content">
+    <section id="single-spa-application:@utp/mf-hiring"></section>
+  </main>
+
   <script>
     System.import('@utp/root-config');
   </script>
